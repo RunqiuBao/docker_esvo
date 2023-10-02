@@ -35,5 +35,5 @@ RUN cd && cd catkin_ws && . /opt/ros/noetic/setup.sh && catkin build
 # 自分のワークスペースが反映されるように，.bashrcファイルに追記．
 RUN echo "source ./catkin_ws/devel/setup.bash" >> .bashrc
 # install deps packages and yaml-cpp, and build esvo
-RUN cd /root/catkin_ws/src && git clone https://github.com/jbeder/yaml-cpp.git && cd /root/catkin_ws/src/yaml-cpp && mkdir build && cd build && cmake -DYAML_BUILD_SHARED_LIBS=ON .. && make -j && cd /root/catkin_ws/src && git clone https://github.com/HKUST-Aerial-Robotics/ESVO.git && vcs-import < ESVO/dependencies.yaml && catkin build esvo_time_surface esvo_core
+RUN cd /root/catkin_ws/src && git clone https://github.com/jbeder/yaml-cpp.git && cd /root/catkin_ws/src/yaml-cpp && mkdir build && cd build && cmake -DYAML_BUILD_SHARED_LIBS=ON .. && make -j && cd /root/catkin_ws/src && git clone https://github.com/RunqiuBao/ESVO.git && vcs-import < ESVO/dependencies.yaml && catkin build esvo_time_surface esvo_core
 
